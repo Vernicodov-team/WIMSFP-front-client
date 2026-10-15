@@ -1,8 +1,21 @@
 module.exports = {
     env: { browser: true, es2022: true },
     extends: ['eslint:recommended', 'plugin:react/recommended'],
-    parserOptions: { ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: { jsx: true } },
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
+    },
     plugins: ['react'],
     settings: { react: { version: 'detect' } },
-    rules: { 'react/prop-types': 'off', 'react/react-in-jsx-scope': 'off' },
+    rules: {
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+    },
+    overrides: [
+        {
+            files: ['vite.config.js'],
+            env: { node: true },
+        },
+    ],
 };
